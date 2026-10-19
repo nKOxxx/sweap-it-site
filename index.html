@@ -316,7 +316,8 @@
       <a href="#program">The program</a>
       <a href="#price">Price board</a>
       <a href="#prs">PR board</a>
-      <a class="btn btn-orange" style="padding:9px 18px; font-size:13.5px;" href="https://github.com/nKOxxx/sweap.it">Start training</a>
+      <a href="#receipt">$ CLI</a>
+      <a class="btn btn-orange" style="padding:9px 18px; font-size:13.5px;" href="#receipt">Run the tests</a>
     </div>
   </div>
 </nav>
@@ -336,7 +337,7 @@
         Local-only. Reversible. Zero dependencies.
       </p>
       <div class="hero-ctas">
-        <a class="btn btn-orange" href="https://github.com/nKOxxx/sweap.it">Run the weigh-in</a>
+        <a class="btn btn-orange" href="#receipt">Run the weigh-in</a>
         <a class="btn btn-chalk" href="#program">See the program</a>
       </div>
       <p class="family"><code>caveman</code> makes your AI talk less. <code>jev</code> makes your AI think faster.
@@ -547,13 +548,77 @@
   </div>
 </section>
 
+<!-- STAGED DRAFT 2026-10-19 — Receipt Reopen section (Homebrew shell, SQLite spine).
+     Placement: after #prs (PR board + gym rules), before .final.
+     Goes live ONLY in the launch moment (repo flip) — the command 404s while private.
+     Scoped styles prefixed .rx- to avoid collisions. Site classes reused: wrap, sec-head, sec-label, sec-sub. -->
+
+<section id="receipt">
+  <style>
+    #receipt .rx-term{background:#0b0e12;border:2px solid #2a2f38;border-radius:6px;padding:18px 20px;margin:26px 0 10px;overflow-x:auto}
+    #receipt .rx-term code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;line-height:1.65;color:#c8d0da;white-space:pre;display:block}
+    #receipt .rx-prompt{color:#5a6472;user-select:none}
+    #receipt .rx-cmd{color:#fff;font-weight:700}
+    #receipt .rx-ok{color:#7ec97e}
+    #receipt .rx-dim{color:#5a6472}
+    #receipt .rx-cap a{color:inherit}
+    #receipt .rx-cap{font-size:12.5px;color:#8b93a0;margin:6px 0 0}
+    #receipt .rx-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media(max-width:720px){#receipt .rx-duo{grid-template-columns:1fr}}
+  </style>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">&#9635; Open receipt</div>
+      <h2>Don't trust the numbers.<br>Re-run them.</h2>
+      <p class="sec-sub">One script, Python's standard library, no network. It builds a synthetic store
+        to an exact fixture spec, then re-derives every expected figure with the real classifier.
+        Your output should match ours line for line. It deletes its own temp store on exit.</p>
+    </div>
+
+    <div class="rx-term">
+<code><span class="rx-prompt">$ </span><span class="rx-cmd">python3 scripts/repro_receipt.py</span>
+
+<span class="rx-dim">SWEAP RECEIPT REPRO : synthetic store, real classifier (cli/diet.py)</span>
+<span class="rx-ok">[OK]</span> class A twin rows: 60 (expected 60)
+<span class="rx-ok">[OK]</span> class A mirror bytes: 166,680 (expected 166,680)
+<span class="rx-ok">[OK]</span> class B resting tool rows: 40 (expected 40)
+<span class="rx-ok">[OK]</span> class B resting bytes: 199,840 (expected 199,840)
+<span class="rx-ok">[OK]</span> dry-run total_n: 100 (expected 100)
+<span class="rx-ok">[OK]</span> dry-run names 5 divergent pairs
+
+Every expected number reproduced by the real classifier.
+<span class="rx-cmd">RECEIPT-REPRO-OK</span></code>
+    </div>
+    <p class="rx-cap">Captured 2026-10-19. The store path line is elided &mdash; the temp directory is yours, not ours.
+      CI re-runs this script on every push; a silent fixture has never merged.</p>
+
+    <div class="rx-duo">
+      <div class="rx-term">
+<code><span class="rx-prompt"># </span><span class="rx-dim">same classifier, your store &mdash; read-only</span>
+<span class="rx-prompt">$ </span><span class="rx-cmd">python3 cli/diet.py --dry-run --db path/to/agent.db</span>
+
+<span class="rx-dim">weigh-in prints your twins, rest, and dead bytes.
+no cuts. no prompts. set your own records.</span></code>
+      </div>
+      <div class="rx-term">
+<code><span class="rx-prompt"># </span><span class="rx-dim">when you like the numbers</span>
+<span class="rx-prompt">$ </span><span class="rx-cmd">python3 cli/diet.py --quarantine --db path/to/agent.db</span>
+
+<span class="rx-dim">every cut hashed first, quarantined, restorable.
+never first-run: the same id, typed twice.</span></code>
+      </div>
+    </div>
+    <p class="rx-cap">Repo is public. <a href="https://github.com/nKOxxx/sweap.it">Clone it and keep the drills</a>. Unplug the cable first if you like &mdash; nothing here will notice.</p>
+  </div>
+</section>
+
 <section class="final">
   <div class="wrap">
     <img src="assets/sweap-lifter.png" alt="sweap.it: pixel weightlifter doing the overhead press" style="image-rendering: pixelated; height: 116px; margin-bottom: 20px;">
     <h2>Day one starts<br>with a weigh-in.</h2>
     <p>Thirty seconds, read-only, your own data. You cannot break anything
       by looking. That one is on the gym rules board.</p>
-    <a class="btn btn-orange" href="https://github.com/nKOxxx/sweap.it">Run the weigh-in</a>
+    <a class="btn btn-orange" href="#receipt">Run the weigh-in</a>
   </div>
 </section>
 
