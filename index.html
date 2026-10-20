@@ -320,6 +320,7 @@
       <a href="#program">The program</a>
       <a href="#price">Price board</a>
       <a href="#prs">PR board</a>
+      <a href="#reportcard">Report card</a>
       <a href="#receipt">$ CLI</a>
       <a href="https://github.com/nKOxxx/sweap.it" aria-label="sweap.it on GitHub" style="display:flex;align-items:center;"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg></a>
       <a class="btn btn-orange" style="padding:9px 18px; font-size:13.5px;" href="#receipt">Run the tests</a>
@@ -624,6 +625,81 @@ RECEIPT-REPRO-OK</code>
       </div>
     </div>
     <p class="rx-cap" style="margin-top:22px;padding-top:16px;border-top:1px solid #232a33">Everything above lives in the <a href="https://github.com/nKOxxx/sweap.it">repo</a>: clone it and re-run every number yourself. Nothing needs the internet; nothing phones home.</p>
+  </div>
+</section>
+
+<section id="reportcard">
+  <style>
+    #reportcard .rc-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:10px}
+    #reportcard .rc-card{background:var(--paper);color:var(--ink);border-radius:14px;padding:26px 26px 20px;box-shadow:var(--shadow-iron);position:relative}
+    #reportcard .rc-card::before{content:"";position:absolute;top:10px;left:50%;transform:translateX(-50%);width:56px;height:6px;border-radius:3px;background:rgba(25,28,23,.16)}
+    #reportcard .rc-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px dashed rgba(25,28,23,.25);padding-bottom:14px}
+    #reportcard .rc-tool{font-family:var(--display);font-size:19px;letter-spacing:.01em}
+    #reportcard .rc-when{font-family:var(--mono);font-size:11px;color:#6b7263}
+    #reportcard .rc-rows{margin-top:6px}
+    #reportcard .rc-row{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px dashed rgba(25,28,23,.14);font-size:14px}
+    #reportcard .rc-row:last-child{border-bottom:0}
+    #reportcard .rc-k{color:#565b4e}
+    #reportcard .rc-v{font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}
+    #reportcard .rc-v.hot{color:var(--orange-deep)}
+    #reportcard .rc-foot{margin-top:14px;padding-top:12px;border-top:2px dashed rgba(25,28,23,.25);font-size:12.5px;color:#565b4e;line-height:1.55}
+    #reportcard .rc-stamp{position:absolute;top:18px;right:20px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--orange-deep);border:1.5px solid var(--orange-deep);border-radius:5px;padding:3px 8px;transform:rotate(4deg)}
+    #reportcard .rc-open{background:var(--chalk-2);border:1.5px dashed var(--chalk-line);border-radius:14px;padding:26px;display:flex;flex-direction:column;justify-content:center;text-align:center;color:var(--chalk-dim)}
+    #reportcard .rc-open b{color:var(--paper);font-size:16px}
+    #reportcard .rc-open .btn{margin-top:18px;align-self:center}
+    @media(max-width:720px){#reportcard .rc-grid{grid-template-columns:1fr}}
+  </style>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-label">&#9632; Report card</div>
+      <h2>Receipts from real machines.</h2>
+      <p class="sec-sub">Every number below is copied verbatim from a filed receipt. Nothing is
+        summarized, rounded in our favor, or invented. File your own and it goes on this board.</p>
+    </div>
+    <div class="rc-grid">
+
+      <div class="rc-card">
+        <div class="rc-stamp">RECEIPT #1</div>
+        <div class="rc-head">
+          <span class="rc-tool">Hermes agent store</span>
+          <span class="rc-when">2026-10-19</span>
+        </div>
+        <div class="rc-rows">
+          <div class="rc-row"><span class="rc-k">Store on disk</span><span class="rc-v">238.3 MB</span></div>
+          <div class="rc-row"><span class="rc-k">Duplicate reasoning twins</span><span class="rc-v">1,388 rows &middot; 4.16 MB</span></div>
+          <div class="rc-row"><span class="rc-k">Divergent pairs (overreach guard)</span><span class="rc-v">0 &middot; must be 0</span></div>
+          <div class="rc-row"><span class="rc-k">Resting tool exhaust</span><span class="rc-v">0 rows &middot; sweep held</span></div>
+          <div class="rc-row"><span class="rc-k">Prior diet on this store</span><span class="rc-v hot">37.57 MB &middot; 0 lost</span></div>
+        </div>
+        <div class="rc-foot">Filed by the founder &middot; macOS 15.6 &middot; Python 3.12. The pile grew back
+          1,388 twin rows since the last clean. Dead weight returns; that is the trainer's job.</div>
+      </div>
+
+      <div class="rc-card">
+        <div class="rc-stamp">RECEIPT #1</div>
+        <div class="rc-head">
+          <span class="rc-tool">Claude Code transcripts</span>
+          <span class="rc-when">2026-10-19</span>
+        </div>
+        <div class="rc-rows">
+          <div class="rc-row"><span class="rc-k">Store on disk</span><span class="rc-v">1.73 MB &middot; 2 files</span></div>
+          <div class="rc-row"><span class="rc-k">Dead exhaust</span><span class="rc-v">25.0% &middot; 0.4 MB</span></div>
+          <div class="rc-row"><span class="rc-k">Cache hit rate (382 calls)</span><span class="rc-v">98.7%</span></div>
+          <div class="rc-row"><span class="rc-k">Cache re-read vs fresh input</span><span class="rc-v hot">28,876,835 : 764 tok</span></div>
+          <div class="rc-row"><span class="rc-k">Wire savings stamped</span><span class="rc-v">$0.00 honest</span></div>
+        </div>
+        <div class="rc-foot">Filed by the founder &middot; same machine. Even a small store drags dead
+          weight: one in four tokens of transcript is spent tool output.</div>
+      </div>
+
+      <div class="rc-open" style="grid-column:1/-1">
+        <b>Your machine here.</b>
+        <span style="margin-top:8px;font-size:13.5px;max-width:520px">Run the 30-second weigh-in, paste the slip, and your receipt takes the next slot on this board. Credit or anonymous, your call.</span>
+        <a class="btn btn-orange" href="https://github.com/nKOxxx/sweap.it/issues/new?template=post_your_receipt.md">File your receipt</a>
+      </div>
+    </div>
+    <p class="rx-cap" style="margin-top:20px">Permission to quote: granted by receipt filers per the
+      template. Numbers above are quoted as filed; the tool that produced them is in the repo.</p>
   </div>
 </section>
 
